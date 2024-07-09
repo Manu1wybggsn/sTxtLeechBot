@@ -127,7 +127,7 @@ async def account_login_upload(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     editable = await m.reply_text("Send Txt File")
     input: Message = await bot.listen(editable.chat.id)
-    x = await input.download()
+    x = await input.speed.download()
     await input.delete(True)
     logging.info(2333)
     path = f"./downloads/{m.chat.id}"
